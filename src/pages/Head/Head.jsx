@@ -12,7 +12,11 @@ export default function Head() {
 
             <ButtonGroup aria-label=""
                 className="d-flex justify-content-center align-items-center gap-3 mt-3 mb-5">
-
+                <Link to='/login'>
+                    <Button variant="secondary">
+                        вход
+                    </Button>
+                </Link>
                 <Link to='/category/characters'>
                     <Button variant="secondary">
                         герои
@@ -28,6 +32,9 @@ export default function Head() {
 
             </ButtonGroup >
             <Outlet />
+
+
+
         </>
     );
 }
