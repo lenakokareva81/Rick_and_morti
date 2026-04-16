@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 
-export function CardCharaters({ gender, name, species, status }) {
+export function CardCharaters({ gender, name, species, status, imgUrl }) {
     const GENDER = gender === "Male" ? "мужской" : gender === "Female" ? "женский" : "не указано"
     return (
         <Card style={{ width: '28rem' }}
@@ -9,7 +9,7 @@ export function CardCharaters({ gender, name, species, status }) {
                 <Card.Title> {name}</Card.Title>
                 <Card.Img
                     variant="top"
-                    src="https://u-stena.ru/upload/resize_cache/iblock/8c2/432_450_1/8c2f36e88e65de30b8712b772cdf134a.jpg"
+                    src={imgUrl}
                     alt="Card image cap"
                 />
                 <Card.Subtitle className="mb-2 text-muted">

@@ -7,7 +7,12 @@ export function AuthStatus() {
     const navigate = useNavigate()
 
     if (auth.user === null) {
-        return <> You are non logged in.</>
+        return <div className="mb-3">
+
+            <div className="invalid-feedback">
+                Пожалуйста, введите имя пользователя.
+            </div>
+        </div>
     }
     const handleSingout = () => {
         auth.singout(() => {
