@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
+// import './App.css'
 
 import { AuthProvider } from './context/AuthProvider'
 import { PrivateRoute } from './component/PrivateRoute'
@@ -14,7 +14,9 @@ const Element = lazy(() => import('./pages/Element/Element')
   }))
 )
 const Category = lazy(() => import('./pages/Category/Category'))
-const NotFound = lazy(() => import('./pages/NotFound/Notfound'))
+const NotFound = lazy(() => import('./pages/NotFound').then(module => ({
+  default: module.NotFound
+})))
 const MainLayout = lazy(() => import('./layout/MainLayout'))
 const Login = lazy(() => import('./pages/Login/Login').then(module => ({
   default: module.Login

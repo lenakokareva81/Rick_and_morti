@@ -1,6 +1,13 @@
 import Card from 'react-bootstrap/Card'
+import { Icharacter } from '../../types/IElement'
+interface IelementProps {
+    element: Icharacter
+}
 
-export function CardCharaters({ gender, name, species, status, imgUrl }) {
+
+export function CardCharaters({ element }:IelementProps) {
+const {gender, name, species, status, url}=element
+
     const GENDER = gender === "Male" ? "мужской" : gender === "Female" ? "женский" : "не указано"
     return (
         <Card style={{ width: '28rem' }}
@@ -9,7 +16,7 @@ export function CardCharaters({ gender, name, species, status, imgUrl }) {
                 <Card.Title> {name}</Card.Title>
                 <Card.Img
                     variant="top"
-                    src={imgUrl}
+                    src={url}
                     alt="Card image cap"
                 />
                 <Card.Subtitle className="mb-2 text-muted">

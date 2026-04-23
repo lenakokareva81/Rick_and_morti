@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 
-export function useSearchElements(categoryname,pageNumber) {
+export function useSearchElements(categoryname:string,pageNumber:number) {
 
 const [loading, setLoading]=useState(true)
 const [error,setError]=useState(false)

@@ -8,7 +8,7 @@ import { Form, Button } from 'react-bootstrap'
 // const useSearchElements =lazy(()=>import('../../hooks')) 
 
 export default function Category() {
-    const { categoryname } = useParams()
+    const { categoryname} = useParams()
     const [pageNumber, setPageNumber] = useState(1)
 
     const { loading,

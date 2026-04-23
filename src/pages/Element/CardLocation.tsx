@@ -1,7 +1,10 @@
 import Card from 'react-bootstrap/Card'
-
-export function CardLocation({ name, type, dimension }) {
-
+import {  Ilocation } from '../../types/IElement'
+interface IelementProps {
+    element: Ilocation
+}
+export function CardLocation({ element }: IelementProps) {
+    const { name, type, dimension } = element
     return (
         <Card style={{ width: '28rem' }}
         >

@@ -6,7 +6,14 @@ import { CATEGORY } from "../../constants";
 import { CardEpisode } from "./CardEpisode";
 import { CardLocation } from "./CardLocation";
 import { useSearchElement } from "../../hooks";
+import { Iepisode, Ilocation, Icharacter } from "../../types/IElement";
 
+
+interface searchElement {
+    loading: boolean,
+    error: boolean,
+    element: Iepisode | Ilocation | Icharacter
+}
 
 export function Element() {
     const { id, categoryname } = useParams()
@@ -15,35 +22,32 @@ export function Element() {
     const { loading,
         error,
         element
-    } = useSearchElement(id, categoryname)
+    }: searchElement = useSearchElement(id, categoryname)
 
-    console.log('element', element)
-    console.log('loading', loading)
+
 
 
     return (
         <>
-            {element.length != 0 &&
+            {element.length != [] &&
                 <div className="d-flex justify-content-center align-items-center p-2">
                     {categoryname === CATEGORY.CHARACTERS ?
                         <CardCharaters
-                            gender={element.gender}
-                            name={element.name}
-                            species={element.species}
-                            status={element.status}
-                            imgUrl={element.image}
+                            element={element}
+                        // gender={element.gender}
+                        // name={element.name}
+                        // species={element.species}
+                        // status={element.status}
+                        // imgUrl={element.image}
                         /> : ''}
                     {categoryname === CATEGORY.EPISODE ?
                         <CardEpisode
-                            name={element.name}
-                            airdate={element.air_date}
-                            episode={element.episode}
+                            element={element}
                         /> : ''}
                     {categoryname === CATEGORY.LOCATION ?
                         <CardLocation
-                            name={element.name}
-                            type={element.type}
-                            dimension={element.dimension}
+                            element={element}
+
 
                         /> : ''}
                 </div>
