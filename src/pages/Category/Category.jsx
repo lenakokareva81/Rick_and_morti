@@ -2,7 +2,7 @@ import { useState, useRef, useCallback, lazy } from "react";
 import { Link, useParams } from "react-router-dom"
 import ListGroup from 'react-bootstrap/ListGroup'
 import { ListGroupItem } from "./ListGroup";
-import { useSearchElements } from "../../hooks";
+import { useSearchElements } from "../../shared/api";
 import { Form, Button } from 'react-bootstrap'
 
 // const useSearchElements =lazy(()=>import('../../hooks')) 
@@ -15,7 +15,6 @@ export default function Category() {
         error,
         elements,
         hasMore } = useSearchElements(categoryname, pageNumber)
-
 
     const observer = useRef();
     const lastNodeRef = useCallback((node) => {

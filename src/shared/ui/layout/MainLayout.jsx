@@ -2,19 +2,20 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 
 import { Link, Outlet } from 'react-router-dom';
+import { CATEGORY, CATEGORY_NAME } from '../../constants';
 
-import { AuthStatus } from '../component/AuthStatus';
-import { CATEGORY, CATEGORY_NAME } from '../constants';
+import { AuthStatus } from '../../../component/AuthStatus';
+// import { CATEGORY, CATEGORY_NAME } from '../../../constants';
 import { Suspense } from 'react';
-import logo from '../assets/logo.png'
+import logo from '../../../assets/logo.png'
 
-export default function MainLayout() {
+export function MainLayout() {
 
 
     return (
         <>
-            <AuthStatus />
-            <img className="col-lg-7 center mx-auto" src={logo} alt="image 404"></img>
+            {/* <AuthStatus /> */}
+            <img className="col-lg-7 center mx-auto" src={logo} alt="logo"></img>
             <ButtonGroup aria-label=""
                 className="d-flex justify-content-center align-items-center gap-3 mt-3 mb-5">
 

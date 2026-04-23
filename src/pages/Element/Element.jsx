@@ -2,23 +2,18 @@ import { useParams } from "react-router-dom"
 
 
 import { CardCharaters } from "./CardCharaters";
-import { CATEGORY } from "../../constants";
+import { CATEGORY } from "../../shared/constants";
 import { CardEpisode } from "./CardEpisode";
 import { CardLocation } from "./CardLocation";
-import { useSearchElement } from "../../hooks";
+import { useSearchElement } from "../../shared/api";
 
 
 export function Element() {
     const { id, categoryname } = useParams()
-
-
     const { loading,
         error,
         element
     } = useSearchElement(id, categoryname)
-
-    console.log('element', element)
-    console.log('loading', loading)
 
 
     return (

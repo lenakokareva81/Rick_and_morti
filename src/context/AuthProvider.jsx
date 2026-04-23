@@ -13,7 +13,6 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
 
     const singin = (newUser, callBack) => {
-        console.log('newUser', newUser)
         setUser(newUser)
         callBack()
     }
