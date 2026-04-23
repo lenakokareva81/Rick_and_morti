@@ -7,6 +7,7 @@ const [loading, setLoading]=useState(true)
 const [error,setError]=useState(false)
 const [elements, setElements]=useState([])
 const [hasMore, setHasMore]=useState(false)
+console.log('categoryname',categoryname)
 
 useEffect(()=>setElements([]),[categoryname])
 
@@ -17,9 +18,9 @@ useEffect(()=>setElements([]),[categoryname])
       let cancel;
          axios({
              method:'GET',
-             url:`https://rickandmortyapi.com/api/${categoryname}?page=${pageNumber}`,
+             url:`https://rickandmortyapi.com/api/${categoryname}`,
              cancelToken: new axios.CancelToken((c)=>cancel=c),
-             params:{p:pageNumber},
+             params:{page:pageNumber},
         }).then((res)=>{
             setElements(prevState=>{
                 
@@ -35,9 +36,6 @@ useEffect(()=>setElements([]),[categoryname])
             setError(false)
             console.error(e)
         })
-
-
-
         return ()=>cancel()
 
 },[categoryname,pageNumber])
@@ -47,6 +45,5 @@ loading,
 error,
 elements,
 hasMore
-
     }
 }

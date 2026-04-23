@@ -26,10 +26,10 @@ const Login = lazy(() => import('../pages/Login/Login').then(module => ({
 
 export function App() {
 
-  console.log('app')
+
   return (
     <>
-      получилось
+
       {/* <AuthProvider> */}
       <Routes>
         <Route path="/" element={<MainLayout />} >

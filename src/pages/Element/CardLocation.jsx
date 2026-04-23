@@ -11,7 +11,6 @@ export function CardLocation({ name, type, dimension }) {
                     тип : {type}
                 </Card.Subtitle>
                 <Card.Text> размер : {dimension}</Card.Text>
-
             </Card.Body>
         </Card>
 
