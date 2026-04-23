@@ -12,17 +12,17 @@ import { Iepisode, Ilocation, Icharacter } from "../../types/IElement";
 interface searchElement {
     loading: boolean,
     error: boolean,
-    element: Iepisode | Ilocation | Icharacter
+    element: Iepisode | Ilocation | Icharacter | []
 }
 
 export function Element() {
     const { id, categoryname } = useParams()
-
+    const idElement: number = Number(id)
 
     const { loading,
         error,
         element
-    }: searchElement = useSearchElement(id, categoryname)
+    }: searchElement = useSearchElement(idElement, categoryname)
 
 
 

@@ -2,15 +2,15 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { Icharacter, Iepisode, Ilocation } from "../types/IElement"
 interface IelementProps {
-    element: Iepisode | Ilocation | Icharacter
+    element: Iepisode | Ilocation | Icharacter 
 }
 
 
-export function useSearchElement(id: IelementProps[id], categoryname: string) {
+export function useSearchElement(id: number, categoryname: string) {
 
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(false)
-    const [element: IelementProps, setElement] = useState([])
+    const [loading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<boolean>(false)
+    const [element, setElement] = useState<IelementProps|[]>([])
 
     console.log('categoryname', categoryname)
 
@@ -25,7 +25,8 @@ export function useSearchElement(id: IelementProps[id], categoryname: string) {
             cancelToken: new axios.CancelToken((c) => cancel = c),
 
         }).then((res) => {
-            const newElement: IelementProps = res.data.results.filter(item => item.id == id)[0]
+            const elements: [IelementProps] =res.data.results
+            const newElement: IelementProps =  elements.filter(item => item.id == id)[0]
             console.log('element-res', res.data.results.filter(item => item.id == id))
             setElement(newElement)
             setLoading(false)

@@ -4,9 +4,9 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { Link, Outlet } from 'react-router-dom';
 
 import { AuthStatus } from '../component/AuthStatus';
-import { CATEGORY, CATEGORY_NAME } from '../constants';
+import { CATEGORY, CATEGORY_NAME } from '../constants/CategoryElements';
 import { Suspense } from 'react';
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 
 export default function MainLayout() {
 
@@ -14,7 +14,7 @@ export default function MainLayout() {
     return (
         <>
             <AuthStatus />
-            <img className="col-lg-7 center mx-auto" src={logo} alt="image 404"></img>
+            {/* <img className="col-lg-7 center mx-auto" src={logo} alt="image 404"></img> */}
             <ButtonGroup aria-label=""
                 className="d-flex justify-content-center align-items-center gap-3 mt-3 mb-5">
 
