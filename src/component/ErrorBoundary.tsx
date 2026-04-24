@@ -1,9 +1,13 @@
-import { Component } from "react";
+import { Component, ReactNode } from "react";
 import { Link } from "react-router-dom";
+
+interface ErrorBoundaryProps{
+   props:React.ReactNode
+}
 
 class ErrorBoundary extends Component {
 
-    constructor(props) {
+    constructor(props: ErrorBoundaryProps) {
         super(props)
 
         this.state = {

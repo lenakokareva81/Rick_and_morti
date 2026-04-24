@@ -12,14 +12,19 @@ export function Login() {
   const auth = useAuth()
   const navigate = useNavigate()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent default HTML form submission
     // console.log('Form submitted:', { email, password });
 
     const formData = new FormData(event.currentTarget)
     const username = formData.get('username')
+    const password = formData.get('password')
 
-    auth.singin(username, () => {
+    const user = {
+      username: username,
+      password: password
+    }
+    auth.singin(user, () => {
       navigate('/')
     })
     // Add further logic here (e.g., API call)

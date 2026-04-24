@@ -3,10 +3,10 @@ import axios from 'axios'
 
 export function useSearchElements(categoryname:string,pageNumber:number) {
 
-const [loading, setLoading]=useState(true)
-const [error,setError]=useState(false)
+const [loading, setLoading]=useState<boolean>(true)
+const [error,setError]=useState<boolean>(false)
 const [elements, setElements]=useState([])
-const [hasMore, setHasMore]=useState(false)
+const [hasMore, setHasMore]=useState<boolean>(false)
 
 useEffect(()=>setElements([]),[categoryname])
 

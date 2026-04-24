@@ -3,17 +3,23 @@ import { createContext, useContext, useState } from "react"
 
 const AuthContext = createContext(null)
 
+interface AuthProviderProps {
+    children: React.ReactNode
+}
+
+
+
 export function useAuth() {
     return useContext(AuthContext)
 }
 
 
 
-export function AuthProvider({ children }) {
+export function AuthProvider({ children }: AuthProviderProps) {
     const [user, setUser] = useState(null)
 
     const singin = (newUser, callBack) => {
-        console.log('newUser', newUser)
+
         setUser(newUser)
         callBack()
     }
